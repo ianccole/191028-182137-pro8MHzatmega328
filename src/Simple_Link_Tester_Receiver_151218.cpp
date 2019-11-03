@@ -74,28 +74,28 @@ void print_Test1Count();
 
 void loop()
 {
-  if (!(digitalRead(Switch1)))              //if switch is pressed, close log and halt
-  {
-    Serial.print(F("Switch Pressed - Closing log "));
-    Serial.println(batch);
+//   if (!(digitalRead(Switch1)))              //if switch is pressed, close log and halt
+//   {
+//     Serial.print(F("Switch Pressed - Closing log "));
+//     Serial.println(batch);
 
-#ifdef USESD
-    logFile.print(F("Switch Pressed - Closing log "));
-    logFile.println(batch);
-    logFile.close();
-#endif
+// #ifdef USESD
+//     logFile.print(F("Switch Pressed - Closing log "));
+//     logFile.println(batch);
+//     logFile.close();
+// #endif
 
-#ifdef UseDisplay
-    disp.clear();
-    disp.setCursor(0, 0);
-    disp.print("Closed Log");
-    disp.setCursor(0, 1);
-    disp.print(batch);
-#endif
+// #ifdef UseDisplay
+//     disp.clear();
+//     disp.setCursor(0, 0);
+//     disp.print("Closed Log");
+//     disp.setCursor(0, 1);
+//     disp.print(batch);
+// #endif
 
-    while (1);                  //loop forever
+//     while (1);                  //loop forever
 
-  }
+//   }
 
   checkforpacket();
 }
